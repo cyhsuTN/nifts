@@ -12,15 +12,15 @@ Download nifts_0.3.6.tar.gz and locally install it.
 library(nifts)
 ```
 ### Power Calculation
-##### Option 1 for RMST margin
+##### - Option 1 for RMST margin
 ``` r
 calculate_power(141, r=1, m1=1, m2=1.1, f1=0.8, p.s=0.3, tau=2.5, Ta=1.5, Te=3)
 ```
-##### Option 2 for RMST margin
+##### - Option 2 for RMST margin
 ``` r
 calculate_power(141, r=1, m1=1, m2=1.1, m0=0.5, f2=0.5, p.s=0.3, tau=2.5, Ta=1.5, Te=3)
 ```
-#### Option 3 for RMST margin
+#### - Option 3 for RMST margin
 ``` r
 mar <- margin.HR2DRMST(m1=1, shape=1, tau=2.5, theta=0.833)
 calculate_power(141, r=1, m1=1, m2=1.1, margin=mar$margin, p.s=0.3, tau=2.5, Ta=1.5, Te=3)
