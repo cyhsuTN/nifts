@@ -5,9 +5,12 @@ Chih-Yuan Hsu
 ## Installation
 
 Download nifts_0.3.6.tar.gz and locally install it.
+``` r
+library(devtools)
+install_github("cyhsuTN/nifts")
+```
 
 ## Usage
-
 ``` r
 library(nifts)
 ```
