@@ -1,0 +1,31 @@
+#' Calculating Shape and Scale Parameters
+#' @description A function to calculate the shape and scale parameters of a Weibull distribution
+#' given a median survival and a survival rate at a specified time.
+#'
+#' @import stats
+#'
+#' @param m1 Median survival time.
+#' @param t1 Time t1.
+#' @param surv.rate What is the survival rate at time t1?
+
+#' @examples # paramWeibull(m1=1, t1=2.5, surv.rate=0.1)
+
+#' @export
+paramWeibull <- function(m1, t1, surv.rate) {
+
+  shapefn <- function(b) {
+    shape1 <- exp(b)
+    scale1 <- m1/(log(2)^(1/shape1))
+    pweibull(t1, shape=shape1, scale=scale1, lower.tail=F)
+  }
+
+  fb.surv <- function(b) shapefn(b) - surv.rate
+
+  solve.b <- uniroot(fb.surv, interval = c(-5, 5), extendInt="yes")
+  b <- solve.b$root
+  shape1 <- exp(b)
+  scale1 <- m1/(log(2)^(1/shape1))
+
+  return(c(shape=shape1, scale=scale1))
+}
+
