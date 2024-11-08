@@ -1,6 +1,6 @@
 nifts: a simulation-based approach to calculate powers and sample sizes required for non-inferiority trials that allow treatment switching in ITT analysis using DRMST
 ================
-Chih-Yuan Hsu
+Austin Shih & Chih-Yuan Hsu
 
 ## Installation
 
