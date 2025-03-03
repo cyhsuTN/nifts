@@ -1,0 +1,18 @@
+Package: nifts
+Type: Package
+Title: Non-Inferiority Trials With Treatment Switching
+Version: 0.4.2
+Imports: survival, stats, scam, ggplot2, flexsurv
+Author: Shih, Austin and Hsu, Chih-Yuan 
+Maintainer: Austin Shih <austin.w.shih@vanderbilt.edu> and Chih-Yuan Hsu <chih-yuan.hsu@vumc.org>
+Description: This package calculates powers and sample sizes required in
+    non-inferiority trials with treatment switching from the active control group to 
+    the new treatment group, when restricted mean survival times 
+    between the two groups are compared.
+    nifts consists of two main functions calculate_power and calculate_size.
+    The first function calculates powers, including the expected numbers of events 
+    in both groups. The latter calculates sample sizes required in trials.
+License: GPL-2 | GPL-3
+Encoding: UTF-8
+RoxygenNote: 7.2.3
+Depends: R (>= 3.1)
