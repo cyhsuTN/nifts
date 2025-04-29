@@ -6,10 +6,10 @@
 #' @import stats
 #' @importFrom flexsurv pgengamma.orig rgengamma.orig
 #'
-#' @param n Number of participants in the control group.
+#' @param n Number of participants in the active control group.
 #' @param r A ratio of participants in the experimental group to
-#' those in the control group. The default ratio is 1.
-#' @param m1 Median survival time in the control group.
+#' those in the active control group. The default ratio is 1.
+#' @param m1 Median survival time in the active control group.
 #' @param m2 Median survival time in the experimental group.
 #' @param shape The shape parameter in generalized gamma distributions (flexsurv::pgengamma.orig)
 #' for the event times of two treatment groups.
@@ -17,34 +17,34 @@
 #' @param k The k parameter in generalized gamma distributions (flexsurv::pgengamma.orig)
 #' for the event times of two treatment groups.
 #' The same k parameter is used for the two treatment groups.
-#' @param f1 Preserved fraction (0 < f1 < 1) for the RMST of the control group.
+#' @param f1 Preserved fraction (0 < f1 < 1) for the RMST of the active control group.
 #' If f1 = 0.8, the RMST of the experimental group is not lower than
-#' 80% RMST of the control group.
-#' H1: the RMST of the experimental group > 80% RMST of the control group.
+#' 80% RMST of the active control group.
+#' H1: the RMST of the experimental group > 80% RMST of the active control group.
 #' It is equivalent to
-#' H1: (the RMST of the experimental group - the RMST of the control group) >
-#' - (1 - f1)(the RMST of the control group).
-#' margin = (1 - f1)(the RMST of the control group).
-#' @param m0 Median survival time in the hypothetical group.
-#' @param f2 Preserved fraction (0 < f2 < 1) of the efficacy of the control group
-#' compared to the hypothetical group.
-#' H1: (the RMST of the experimental group - the RMST of hypothetical group) >
-#' f2 (the RMST of the control group - the RMST of hypothetical group).
+#' H1: (the RMST of the experimental group - the RMST of the active control group) >
+#' - (1 - f1)(the RMST of the active control group).
+#' margin = (1 - f1)(the RMST of the active control group).
+#' @param m0 Median survival time in the hypothetical placebo group.
+#' @param f2 Preserved fraction (0 < f2 < 1) of the efficacy of the active control group
+#' compared to the hypothetical placebo group.
+#' H1: (the RMST of the experimental group - the RMST of hypothetical placebo group) >
+#' f2 (the RMST of the active control group - the RMST of hypothetical placebo group).
 #' It is equivalent to
-#' H1: (the RMST of the experimental group - the RMST of the control group) >
-#' - (1 - f2)(the RMST of the control group - the RMST of hypothetical group).
-#' margin = (1 - f2)(the RMST of the control group - the RMST of hypothetical group).
+#' H1: (the RMST of the experimental group - the RMST of the active control group) >
+#' - (1 - f2)(the RMST of the active control group - the RMST of hypothetical placebo group).
+#' margin = (1 - f2)(the RMST of the active control group - the RMST of hypothetical placebo group).
 #' @param margin A margin (>0) for DRMST.
 #' @param p.s Switching probability of participants who may switch treatment
 #' from the control group to the experimental group after evaluation.
-#' The default is 0.3
+#' The default is 0.2
 #' @param r.s A ratio of the mean switching time to the mean survival time in the
-#' control group. The default is 0.3.
-#' @param rho.s Correlation between switching time and event time in the control group.
+#' active control group. The default is 0.5.
+#' @param rho.s Correlation between switching time and event time in the active control group.
 #' @param s.dist An option for the distribution of switching times.
 #' s.dist = "gamma", "beta", "unif", "indepExp", or a constant value.
 #' @param entry Entry patterns. entry = "increasing", "decreasing", or "unif".
-#' @param censoring.prob Censoring probability in the control group
+#' @param censoring.prob Censoring probability in the active control group
 #' under no treatment switching. The default is c("AC.only").
 #' @param lossfu.dist The distribution for dropout censoring: uniform ("unif") or
 #' exponential ("exp").
@@ -59,26 +59,26 @@
 #' @param n_simulations Number of simulations. The default is 5000.
 #' @param seed Simulation seed for reproducibility. set.seed(seed).
 
-#' @return \item{Power}{The proportion of rejecting null hypothesis using an adjusted margin}
+#' @return \item{Power}{The proportion of rejecting null hypothesis using the adjusted margin}
 #' @return \item{Power.with.unadj.margin}{The proportion of rejecting null hypothesis
-#' using a unadjusted margin}
-#' @return \item{E1}{The mean number of events in the control group}
+#' using the unadjusted margin}
+#' @return \item{E1}{The mean number of events in the active control group}
 #' @return \item{E2}{The mean number of events in the experimental group}
-#' @return \item{mRMST1}{The mean DRMST value across simulations in the control group}
+#' @return \item{mRMST1}{The mean DRMST value across simulations in the active control group}
 #' @return \item{mRMST2}{The mean DRMST value across simulations in the experimental group}
 #' @return \item{mDRMST}{The mean DRMST value across simulations}
 #' @return \item{margin.unadj}{unadjusted margin}
 #' @return \item{margin.adj}{adjusted margin}
 
-#' @examples # calculate_power(141, r=1, m1=1, m2=1.1, f1=0.8, p.s=0.3, tau=2.5)
-#' @examples # calculate_power(141, r=1, m1=1, m2=1.1, m0=0.5, f2=0.5, p.s=0.3, tau=2.5)
+#' @examples # calculate_power(141, r=1, m1=1, m2=1.1, f1=0.8, p.s=0.3, tau=3)
+#' @examples # calculate_power(141, r=1, m1=1, m2=1.1, m0=0.5, f2=0.5, p.s=0.3, tau=3)
 #'
-#' @examples # mar <- margin.HR2DRMST(m1=1, shape=1, tau=2.5, theta=0.833)
-#' @examples # calculate_power(141, r=1, m1=1, m2=1.1, margin=mar$margin, p.s=0.3, tau=2.5)
+#' @examples # mar <- margin.HR2DRMST(m1=1, shape=1, tau=3, theta=0.833)
+#' @examples # calculate_power(141, r=1, m1=1, m2=1.1, margin=mar$margin, p.s=0.3, tau=3)
 #'
 #' @examples # ab <- paramWeibull(m=1, t1=2.5, surv.prob=0.1)
 #' @examples # calculate_power(141, r=1, m1=1, m2=1.1, shape=ab[1],
-#' @examples #                 m0=0.5, f2=0.5, p.s=0.3, tau=2.5)
+#' @examples #                 m0=0.5, f2=0.5, p.s=0.3, tau=3)
 
 #' @export
 calculate_power <- function(n,
@@ -89,17 +89,17 @@ calculate_power <- function(n,
                             k=1,
                             f1=NULL,
                             m0=0.5,
-                            f2=0.75,
+                            f2=0.5,
                             margin=NULL,
-                            p.s=0.3,
-                            r.s=0.3,
-                            rho.s=0.3,
+                            p.s=0.2,
+                            r.s=0.5,
+                            rho.s=0.775,
                             s.dist=c("unif", "beta", "gamma", "indepExp")[3],
                             entry=c("unif", "decreasing", "increasing")[1],
                             censoring.prob=c("AC.only"),
                             lossfu.dist=c("unif", "exp")[1],
-                            Ta=1.5,
-                            Te=3,
+                            Ta=3,
+                            Te=5,
                             tau=NULL,
                             one.sided.alpha=0.025,
                             TXswitch=c("1to2", "2to1")[1],
