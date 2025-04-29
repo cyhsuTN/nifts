@@ -11,7 +11,7 @@
 #' (flexsurv::pgengamma.orig) for event time.
 #' @param tau A value to specify the truncation time point for the RMST calculation.
 
-#' @examples # calRMST(m=1, shape=1, k=1, tau=2.5)
+#' @examples # calRMST(m=1, shape=1, k=1, tau=3)
 
 #' @export
 calRMST <- function(m=1, shape=1, k=1, tau=NULL) {
