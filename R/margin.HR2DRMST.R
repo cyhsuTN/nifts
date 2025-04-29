@@ -3,15 +3,15 @@
 #'
 #' @import stats
 #'
-#' @param m1 Median survival time in the control group.
+#' @param m1 Median survival time in the active control group.
 #' @param shape The shape parameter of Weibull distributions for event time.
 #' @param tau A value to specify the truncation time point for the RMST calculation.
-#' @param theta H1: HR21 < 1/theta (a margin for the HR of experimental to control).
+#' @param theta H1: HR21 < 1/theta (a margin for the HR of experimental to active control).
 #' Superiority if theta = 1; Non-inferiority if 0 < theta < 1.
 #' When theta is given, the HR margin is converted to the DRMST margin.
 #' H1: RMST2 - RMST1 > - the DRMST margin.
 
-#' @examples # margin.HR2DRMST(m1=1, shape=1, tau=2.5, theta=0.833)
+#' @examples # margin.HR2DRMST(m1=1, shape=1, tau=3, theta=0.833)
 
 #' @export
 margin.HR2DRMST <- function(m1=1, shape=1, tau=3, theta=0.833) {
