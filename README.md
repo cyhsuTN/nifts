@@ -4,7 +4,7 @@ Austin Shih & Chih-Yuan Hsu
 
 ## Installation
 
-Download nifts_0.4.2.tar.gz and locally install it, or execute the following code:
+Download nifts_0.4.3.tar.gz and locally install it, or execute the following code:
 ``` r
 library(devtools)
 install_github("cyhsuTN/nifts")
