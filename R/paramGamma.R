@@ -6,7 +6,7 @@
 #'
 #' @param m Median survival time.
 #' @param t1 Time t1.
-#' @param surv.prob What is the survival probability at time t1?
+#' @param surv.prob Survival probability at time t1.
 
 #' @examples # paramGamma(m=1, t1=2.5, surv.prob=0.1)
 
