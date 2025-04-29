@@ -17,8 +17,8 @@ plotPower(res, x.by = 10, y.by = 0.1)
 A function showing a power plot.
 }
 \examples{
-# ab <- paramWeibull(m1=1, t1=2.5, surv.prob=0.1)
+# ab <- paramWeibull(m=1, t1=2.5, surv.prob=0.1)
 # pow <- calculate_size(nL=20, nU=200, r=1, m1=1, m2=1.5,
-#                  shape=ab[1], m0=0.5, f2=0.5, p.s=0.3, tau=2.5)
+#                  shape=ab[1], m0=0.5, f2=0.5, p.s=0.3, tau=3)
 # plotPower(pow, x.by=20, y.by=0.1)
 }
