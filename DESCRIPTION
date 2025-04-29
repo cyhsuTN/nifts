@@ -1,10 +1,10 @@
 Package: nifts
 Type: Package
 Title: Non-Inferiority Trials With Treatment Switching
-Version: 0.4.2
+Version: 0.4.3
 Imports: survival, stats, scam, ggplot2, flexsurv
 Author: Shih, Austin and Hsu, Chih-Yuan 
-Maintainer: Austin Shih <austin.w.shih@vanderbilt.edu> and Chih-Yuan Hsu <chih-yuan.hsu@vumc.org>
+Maintainer: Chih-Yuan Hsu <chih-yuan.hsu@vumc.org>
 Description: This package calculates powers and sample sizes required in
     non-inferiority trials with treatment switching from the active control group to 
     the new treatment group, when restricted mean survival times 
