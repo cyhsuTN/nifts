@@ -7,13 +7,13 @@
 margin.HR2DRMST(m1 = 1, shape = 1, tau = 3, theta = 0.833)
 }
 \arguments{
-\item{m1}{Median survival time in the control group.}
+\item{m1}{Median survival time in the active control group.}
 
 \item{shape}{The shape parameter of Weibull distributions for event time.}
 
 \item{tau}{A value to specify the truncation time point for the RMST calculation.}
 
-\item{theta}{H1: HR21 < 1/theta (a margin for the HR of experimental to control).
+\item{theta}{H1: HR21 < 1/theta (a margin for the HR of experimental to active control).
 Superiority if theta = 1; Non-inferiority if 0 < theta < 1.
 When theta is given, the HR margin is converted to the DRMST margin.
 H1: RMST2 - RMST1 > - the DRMST margin.}
@@ -22,5 +22,5 @@ H1: RMST2 - RMST1 > - the DRMST margin.}
 A function to convert HR margin to DRMST margin
 }
 \examples{
-# margin.HR2DRMST(m1=1, shape=1, tau=2.5, theta=0.833)
+# margin.HR2DRMST(m1=1, shape=1, tau=3, theta=0.833)
 }
