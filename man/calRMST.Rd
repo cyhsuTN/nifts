@@ -21,5 +21,5 @@ calRMST(m = 1, shape = 1, k = 1, tau = NULL)
 A function to calculate RMST
 }
 \examples{
-# calRMST(m=1, shape=1, k=1, tau=2.5)
+# calRMST(m=1, shape=1, k=1, tau=3)
 }
