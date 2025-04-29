@@ -11,7 +11,7 @@ paramGamma(m, t1, surv.prob)
 
 \item{t1}{Time t1.}
 
-\item{surv.prob}{What is the survival probability at time t1?}
+\item{surv.prob}{Survival probability at time t1.}
 }
 \description{
 A function to calculate the shape (k) and scale parameters of a gamma distribution
