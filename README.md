@@ -2,6 +2,8 @@ nifts: a simulation-based approach to calculate powers and sample sizes required
 ================
 Austin Shih & Chih-Yuan Hsu
 
+Austin Shih, Chih‑Yuan Hsu, Yu Shyr (2025). Power and sample size calculation for non-inferiority trials with treatment switching in intention-to-treat analysis comparing RMSTs. *BMC Medical Research Methodology*. 25:157
+
 ## Installation
 
 Download nifts_0.4.3.tar.gz and locally install it, or execute the following code:
