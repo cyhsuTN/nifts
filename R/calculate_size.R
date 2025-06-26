@@ -91,7 +91,7 @@ calculate_size <- function(nL=10, nU=100, B=10, epwr=0.8,
                            one.sided.alpha=0.025,
                            TXswitch=c("1to2", "2to1")[1],
                            af=1,
-                           n_simulations=5000,
+                           n_simulations=1000,
                            seed=2024) {
   powers <- numeric(B)
   E1s <- numeric(B)
