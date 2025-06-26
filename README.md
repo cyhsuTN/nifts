@@ -41,7 +41,7 @@ plotPower(pow, x.by=40, y.by=0.1)
 
 ### When event times NOT follow exponential distributions
 Weibull distributions are assumed for event times of two treatment groups.
-The shape parameter is calculated by a given m and survival probability at t1.
+The shape and scale parameters are calculated by a given m and survival probability at t1.
 ``` r
 ab <- paramWeibull(m=1, t1=2.5, surv.prob=0.1)
 calculate_power(141, r=1, m1=1, m2=1.1, shape=ab[1], k=1, m0=0.5, f2=0.5, p.s=0.3,
@@ -56,7 +56,7 @@ plotPower(pow, x.by=20, y.by=0.1)
 ```
 
 Gamma distributions are assumed for event times of two treatment groups.
-The shape parameter is calculated by a given m and survival probability at t1.
+The shape and scale parameters are calculated by a given m and survival probability at t1.
 ``` r
 ab <- paramGamma(m=1, t1=2.5, surv.prob=0.1)
 calculate_power(141, r=1, m1=1, m2=1.1, shape=1, k=ab[1], m0=0.5, f2=0.5, p.s=0.3,
