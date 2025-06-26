@@ -25,13 +25,19 @@ calculate_power(141, r=1, m1=1, m2=1.1, f1=0.8, p.s=0.3, tau=2.5, Ta=1.5, Te=3)
 ``` r
 calculate_power(141, r=1, m1=1, m2=1.1, m0=0.5, f2=0.5, p.s=0.3, tau=2.5, Ta=1.5, Te=3)
 ```
-#### -- Option 3 for RMST margin
+##### -- Option 3 for RMST margin
 ``` r
 mar <- margin.HR2DRMST(m1=1, shape=1, tau=2.5, theta=0.833)
 calculate_power(141, r=1, m1=1, m2=1.1, margin=mar$margin, p.s=0.3, tau=2.5, Ta=1.5, Te=3)
 ```
 
 ### Sample Size Calculation
+##### Corresponding to Option 1
+``` r
+pow <- calculate_size(nL=100, nU=200, r=1, m1=1, m2=1.1, f1=0.8, p.s=0.3, tau=2.5, Ta=1.5, Te=3)
+plotPower(pow, x.by=40, y.by=0.1)
+```
+##### Corresponding to Option 3
 ``` r
 mar <- margin.HR2DRMST(m1=1, shape=1, tau=2.5, theta=0.833)
 pow <- calculate_size(nL=200, nU=400, r=1, m1=1, m2=1.1, margin=mar$margin, p.s=0.3,
