@@ -30,6 +30,7 @@ calculate_power(141, r=1, m1=1, m2=1.1, m0=0.5, f2=0.5, p.s=0.3, tau=2.5, Ta=1.5
 mar <- margin.HR2DRMST(m1=1, shape=1, tau=2.5, theta=0.833)
 calculate_power(141, r=1, m1=1, m2=1.1, margin=mar$margin, p.s=0.3, tau=2.5, Ta=1.5, Te=3)
 ```
+When p.s = 0, there is NO treatment switching, and the study design simplifies to a standard non-inferiority trial.
 
 ### Sample Size Calculation
 ##### Corresponding to Option 1
