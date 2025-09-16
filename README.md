@@ -23,21 +23,21 @@ The aim of a non-inferiority trial using DRMST is to test $H_0:\Delta(\tau)\le -
 ##### -- Option 1 for RMST margin
 *Preserved fraction of the RMST of the active control group*
 
-margin = $(1- f1) \times R_1(\tau)$ 
+margin $(\delta)$ = $(1- f1) \times R_1(\tau)$ 
 ``` r
 calculate_power(141, r=1, m1=1, m2=1.1, f1=0.8, p.s=0.3, tau=2.5, Ta=1.5, Te=3)
 ```
 ##### -- Option 2 for RMST margin
 *Preserved fraction of the DRMST between the active control and hypothetical placebo groups*
 
-margin = $(1- f2) \times$ ($R_1(\tau)$ - RMST of the hypothetical placebo group)
+margin $(\delta)$ = $(1- f2) \times$ ($R_1(\tau)$ - RMST of the hypothetical placebo group)
 ``` r
 calculate_power(141, r=1, m1=1, m2=1.1, m0=0.5, f2=0.5, p.s=0.3, tau=2.5, Ta=1.5, Te=3)
 ```
 ##### -- Option 3 for RMST margin
 *Conversion from the hazard ratio*
 
-margin = ($R_1(\tau)$ - RMST determined by a hazard ratio $\theta$), where 
+margin $(\delta)$ = ($R_1(\tau)$ - RMST determined by a hazard ratio $\theta$), where 
 the RMST = $\int_0^\tau (S_1(t))^{1/\theta} dt$ and 
 $S_1(t)$ is the survival function of the active control group.
 ``` r
