@@ -17,6 +17,8 @@ install_github("cyhsuTN/nifts")
 library(nifts)
 ```
 ### Power Calculation
+The aim of a non-inferiority trial using DRMST is to test $H_0:\Delta(\tau)\e -\delta$ vs $H_1:\Delta(\tau)> -\deltaδ$, where $\delta>0$ is a prespecified margin.
+
 ##### -- Option 1 for RMST margin
 *Preserved fraction of the RMST of the active control group*
 
