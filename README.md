@@ -19,6 +19,7 @@ library(nifts)
 ### Power Calculation
 ##### -- Option 1 for RMST margin
 *Preserved fraction of the RMST of the active control group*
+
 margin = $(1- f1) \times$ RMST of the active control group 
 ``` r
 calculate_power(141, r=1, m1=1, m2=1.1, f1=0.8, p.s=0.3, tau=2.5, Ta=1.5, Te=3)
