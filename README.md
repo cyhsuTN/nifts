@@ -18,7 +18,7 @@ library(nifts)
 ```
 ### Power Calculation
 Let $R_1(\tau)$ and $R_2(\tau)$ denote the RMSTs of the active control group and the the experimental group, respectively, and let $\Delta(\tau)=R_2 (\tau)-R_1 (\tau)$. 
-The aim of a non-inferiority trial using DRMST is to test $H_0:\Delta(\tau)\\e -\delta$ vs $H_1:\Delta(\tau)> -\delta$, where $\delta>0$ is a prespecified margin.
+The aim of a non-inferiority trial using DRMST is to test $H_0:\Delta(\tau)\le -\delta$ vs $H_1:\Delta(\tau)> -\delta$, where $\delta>0$ is a prespecified margin.
 
 ##### -- Option 1 for RMST margin
 *Preserved fraction of the RMST of the active control group*
