@@ -38,7 +38,7 @@ calculate_power(141, r=1, m1=1, m2=1.1, m0=0.5, f2=0.5, p.s=0.3, tau=2.5, Ta=1.5
 *Conversion from the hazard ratio*
 
 margin = ($R_1(\tau)$ - RMST determined by a hazard ratio $\theta$), where 
-RMST determined by a hazard ratio $\theta$ = $\int_0^\tau (S_1(t))^{1/\theta} dt$ and 
+the RMST = $\int_0^\tau (S_1(t))^{1/\theta} dt$ and 
 $S_1(t)$ is the survival function of the active control group.
 ``` r
 mar <- margin.HR2DRMST(m1=1, shape=1, tau=2.5, theta=0.833)
